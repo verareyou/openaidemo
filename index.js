@@ -12,7 +12,11 @@ const openai = new OpenAIApi(
 );
 const app = express();
 
-app.use(cors());
+app.use(cors(
+  {
+    origin: "*",
+  }
+));
 
 app.get("/:id", async (req, res) => {
 
